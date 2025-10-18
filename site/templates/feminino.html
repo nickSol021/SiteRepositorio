@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style_categorias.css">
+    <title>Moda Feminina - Mix-Modas</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <a href="index.html" style="color: white; text-decoration: none; font-size: 1.5rem; font-weight: 700;">
+                <img src="/static/css/logo-mixmodas.png" alt="Mix-Modas" class="logo-img">
+            </a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="O que você procura hoje?" id="searchInput">
+            <button onclick="pesquisar()">Pesquisar</button>
+        </div>
+        <div class="icons">
+            <a href="lista_desejos.html">❤️ Lista de Desejos</a>
+            <a href="/templates/tela_login.html">👤 Entrar</a>
+            <a href="carrinho.html">🛒 Seu Carrinho (0)</a>
+        </div>
+    </header>
+
+    <!-- NAV CATEGORIAS COM DROPDOWN -->
+    <nav>
+        <ul>
+            <!-- Todas as Categorias - NÃO CLICÁVEL -->
+            <li>
+                <a href="javascript:void(0)" style="cursor: default;">☰ Todas as categorias</a>
+                <div class="dropdown dropdown-todas">
+                    <ul>
+                        <li><a href="masculino.html">👕 Masculino</a></li>
+                        <li><a href="feminino.html">👚 Feminino</a></li>
+                        <li><a href="infantil.html">👶 Infantil</a></li>
+                        <li><a href="acessorios.html">🕶️ Acessórios</a></li>
+                        <li><a href="calcados.html">👟 Calçados</a></li>
+                        <li><a href="esportivo.html">🏃 Esportivo</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- Masculino -->
+            <li>
+                <a href="masculino.html">Masculino</a>
+                <div class="dropdown dropdown-masculino">
+                    <ul>
+                        <li><a href="masculino.html?categoria=camisas">👔 Camisas</a></li>
+                        <li><a href="masculino.html?categoria=calcas">👖 Calças</a></li>
+                        <li><a href="masculino.html?categoria=bermudas">🩳 Bermudas</a></li>
+                        <li><a href="masculino.html?categoria=blazers">🥼 Blazers</a></li>
+                        <li><a href="masculino.html?categoria=esportivo">🏃 Esportivo</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- Feminino -->
+            <li>
+                <a href="feminino.html">Feminino</a>
+                <div class="dropdown dropdown-feminino">
+                    <ul>
+                        <li><a href="feminino.html?categoria=vestidos">👗 Vestidos</a></li>
+                        <li><a href="feminino.html?categoria=blusas">👚 Blusas</a></li>
+                        <li><a href="feminino.html?categoria=calcas">👖 Calças</a></li>
+                        <li><a href="feminino.html?categoria=saias">👡 Saias</a></li>
+                        <li><a href="feminino.html?categoria=plus-size">📏 Plus Size</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- Infantil -->
+            <li>
+                <a href="infantil.html">Infantil</a>
+                <div class="dropdown dropdown-infantil">
+                    <ul>
+                        <li><a href="infantil.html?categoria=menino">🚹 Menino</a></li>
+                        <li><a href="infantil.html?categoria=menina">🚺 Menina</a></li>
+                        <li><a href="infantil.html?categoria=calcados-infantil">👟 Calçados</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- Acessórios -->
+            <li>
+                <a href="acessorios.html">Acessórios</a>
+                <div class="dropdown dropdown-acessorios">
+                    <ul>
+                        <li><a href="acessorios.html?categoria=relogios">⌚ Relógios</a></li>
+                        <li><a href="acessorios.html?categoria=oculos">🕶️ Óculos</a></li>
+                        <li><a href="acessorios.html?categoria=chapeus">🧢 Chapéus</a></li>
+                        <li><a href="acessorios.html?categoria=lenços">🧣 Lenços</a></li>
+                        <li><a href="acessorios.html?categoria=cintos">⛓️ Cintos</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li><a href="ofertas.html">🔥 Ofertas</a></li>
+        </ul>
+    </nav>
+
+    <!-- PROMO BAR -->
+    <div class="promo-bar">
+        🚀 Frete grátis para compras acima de <span>R$99,99</span> 
+    </div>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> > <span>Moda Feminina</span>
+    </div>
+
+    <!-- TÍTULO -->
+    <section class="page-title">
+        <h1>👚 Moda Feminina</h1>
+        <p>Elegância e estilo para todos os momentos</p>
+    </section>
+
+    <!-- FILTROS -->
+    <section class="filters">
+        <div class="filter-group">
+            <label>Ordenar por:</label>
+            <select>
+                <option>Mais vendidos</option>
+                <option>Menor preço</option>
+                <option>Maior preço</option>
+                <option>Lançamentos</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label>Tamanho:</label>
+            <select>
+                <option>Todos</option>
+                <option>PP</option>
+                <option>P</option>
+                <option>M</option>
+                <option>G</option>
+                <option>GG</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label>Cor:</label>
+            <select>
+                <option>Todas</option>
+                <option>Preto</option>
+                <option>Branco</option>
+                <option>Vermelho</option>
+                <option>Azul</option>
+                <option>Rosa</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section class="produtos-container">
+        <div class="produtos-grid">
+            <!-- Vestido -->
+            <div class="produto-card">
+                <div class="produto-tag">-25%</div>
+                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=300&h=300&fit=crop" alt="Vestido Floral" class="produto-imagem">
+                <div class="produto-info">
+                    <h3 class="produto-titulo">Vestido Floral Verão</h3>
+                    <p class="produto-preco">R$ 89,90</p>
+                    <p class="produto-parcelamento">ou 3x de R$ 29,97</p>
+                    <div class="produto-acoes">
+                        <button class="btn-carrinho">Adicionar</button>
+                        <button class="btn-favorito">❤️</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blusa -->
+            <div class="produto-card">
+                <div class="produto-tag">-20%</div>
+                <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=300&h=300&fit=crop" alt="Blusa Manga Longa" class="produto-imagem">
+                <div class="produto-info">
+                    <h3 class="produto-titulo">Blusa Manga Longa</h3>
+                    <p class="produto-preco">R$ 69,90</p>
+                    <p class="produto-parcelamento">ou 2x de R$ 34,95</p>
+                    <div class="produto-acoes">
+                        <button class="btn-carrinho">Adicionar</button>
+                        <button class="btn-favorito">❤️</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calça -->
+            <div class="produto-card">
+                <div class="produto-tag">-15%</div>
+                <img src="https://images.unsplash.com/photo-1582418702059-97ebafb35d09?w=300&h=300&fit=crop" alt="Calça Jeans" class="produto-imagem">
+                <div class="produto-info">
+                    <h3 class="produto-titulo">Calça Jeans Skinny</h3>
+                    <p class="produto-preco">R$ 119,90</p>
+                    <p class="produto-parcelamento">ou 4x de R$ 29,98</p>
+                    <div class="produto-acoes">
+                        <button class="btn-carrinho">Adicionar</button>
+                        <button class="btn-favorito">❤️</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Saia -->
+            <div class="produto-card">
+                <div class="produto-tag">-30%</div>
+                <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&h=300&fit=crop" alt="Saia Midi" class="produto-imagem">
+                <div class="produto-info">
+                    <h3 class="produto-titulo">Saia Midi Preta</h3>
+                    <p class="produto-preco">R$ 79,90</p>
+                    <p class="produto-parcelamento">ou 3x de R$ 26,63</p>
+                    <div class="produto-acoes">
+                        <button class="btn-carrinho">Adicionar</button>
+                        <button class="btn-favorito">❤️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGINAÇÃO -->
+        <div class="paginacao">
+            <a href="#">‹</a>
+            <a href="#" class="ativa">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">›</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>👗 Mix-Modas</h3>
+                <p>Sua loja de moda preferida com os melhores preços e tendências.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Institucional</h4>
+                <a href="#">Sobre nós</a>
+                <a href="#">Trocas e Devoluções</a>
+                <a href="#">Política de Privacidade</a>
+            </div>
+            <div class="footer-section">
+                <h4>Atendimento</h4>
+                <a href="#">Central de Ajuda</a>
+                <a href="#">Fale Conosco</a>
+                <a href="#">WhatsApp</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <div class="social-links">
+                    <a href="#">📷 Instagram</a>
+                    <a href="#">📘 Facebook</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mix-Modas - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        function pesquisar() {
+            const termo = document.getElementById('searchInput').value;
+            if (termo.trim()) {
+                alert(`Pesquisando por: ${termo}`);
+            }
+        }
+
+        // Pesquisar ao pressionar Enter
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                pesquisar();
+            }
+        });
+
+        // Funcionalidade dos botões
+        document.querySelectorAll('.btn-carrinho').forEach(button => {
+            button.addEventListener('click', function() {
+                const produto = this.closest('.produto-card');
+                const nome = produto.querySelector('.produto-titulo').textContent;
+                alert(`${nome} adicionado ao carrinho!`);
+            });
+        });
+
+        document.querySelectorAll('.btn-favorito').forEach(button => {
+            button.addEventListener('click', function() {
+                const produto = this.closest('.produto-card');
+                const nome = produto.querySelector('.produto-titulo').textContent;
+                alert(`${nome} adicionado aos favoritos!`);
+            });
+        });
+    </script>
+
+</body>
+</html>
